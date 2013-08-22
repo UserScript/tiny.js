@@ -1,8 +1,8 @@
-/*! Tiny.js v0.2.0 **/
+/*! Tiny.js v0.2.1 **/
 
 //namespace
-var $ = function (s) {
-	return document.querySelectorAll(s);
+var $ = function (s, eWrapper) {
+	return (eWrapper || document).querySelectorAll(s);
 };
 
 //utilties - array-like
@@ -21,7 +21,7 @@ $.strstr = function (so, s) {
 $.id = function (s) {
 	return document.getElementById(s);
 };
-$.cls = function (s, eWrapper) {
+$.class = function (s, eWrapper) {
 	return (eWrapper || document).getElementsByClassName(s);
 };
 $.tag = function (s, eWrapper) {
