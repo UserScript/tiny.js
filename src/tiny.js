@@ -1,4 +1,4 @@
-/*! Tiny.js v0.2.1 **/
+/*! Tiny.js v0.3.0 **/
 
 //namespace
 var $ = function (s, eWrapper) {
@@ -37,9 +37,18 @@ $.crText = function (s) {
 };
 
 //mod dom
-$.insBefore = function (eWrapper, e) {
-	eWrapper.insertBefore(e, eWrapper.firstChild);
+$.insertBefore = function (e, eTarget) {
+	eTarget.parentNode.insertBefore(e, eTarget);
 };
+$.before = function (eTarget, e) {
+	$.insBefore(e, eTarget);
+};
+$.append = function (eWrapper, e) {
+	eWrapper.appendChild(e);
+}
+$.appendTo = function (e, eWrapper) {
+	$.append(eWrapper, e);
+}
 $.remove = function (e) {
 	e.parentNode.removeChild(e);
 };
