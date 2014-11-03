@@ -1,0 +1,28 @@
+{
+  "name": "tiny.js",
+  "version": "0.4.0",
+  "homepage": "https://github.com/UserScript/tiny.js",
+  "authors": [
+    "cssmagic"
+  ],
+  "description": "A tiny JavaScript utility library.",
+  "main": "src/tiny.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "weibo",
+    "v5"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "**.sh",
+    "package.json",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
