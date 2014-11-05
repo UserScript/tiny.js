@@ -88,15 +88,13 @@ void function (root) {
 		return $.str.include(' ' + e.className + ' ', ' ' + s + ' ')
 	}
 	$.addClass = function (e, s) {
-		var so = e.className
-		if (!$.hasClass(so, s)) {
+		if (!$.hasClass(e, s)) {
 			e.className += (' ' + s)
 		}
 	}
-	$.removeClass = function (e,s) {
-		var so = e.className
-		if ($.hasClass(so, s)) {
-			e.className = (' ' + so + ' ').replace(' ' + s + ' ', ' ').trim()
+	$.removeClass = function (e, s) {
+		if ($.hasClass(e, s)) {
+			e.className = (' ' + e.className + ' ').replace(' ' + s + ' ', ' ').trim()
 		}
 	}
 
