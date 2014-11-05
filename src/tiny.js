@@ -1,9 +1,9 @@
 /*!
- * Tiny.js
+ * Tiny.js v0.4.0
  * https://github.com/UserScript/tiny.js
  */
 
-void function () {
+void function (root) {
 	'use strict'
 
 	//namespace
@@ -11,14 +11,23 @@ void function () {
 		return (eWrapper || document).querySelectorAll(s)
 	}
 
-	//utilities
+	//type
+	$.isArray = function (arr) {
+		return Array.isArray(arr)
+	}
+
+	//data collection
 	//TODO
 	//$.extend()
-	$.each = function (a, fn, context) {
+	$.each = function (arr, fn, context) {
 		//todo: object
-		for (var i = 0, l = a.length; i < l; ++i) {
-			fn.call(context || window, a[i], i, a)
+		for (var i = 0, l = arr.length; i < l; ++i) {
+			fn.call(context || window, arr[i], i, arr)
 		}
+	}
+	$.inArray = function (arr, item) {
+		if (!$.isArray(arr)) return false
+		return arr.indexOf(item) > -1
 	}
 
 	//str
@@ -122,12 +131,6 @@ void function () {
 	}
 
 	//exports
-	if (
-		!('jQuery' in window) &&
-		!('Zepto' in window) &&
-		!('$' in window)
-	) {
-		window.$ = $
-	}
+	root.$ = $
 
-}()
+}(this)
